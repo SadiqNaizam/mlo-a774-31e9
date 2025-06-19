@@ -13,41 +13,39 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 91% 60%; /* New: #3B82F6 */
+    --primary-foreground: 210 40% 98%; /* Near White */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 9% 46%; /* New: Warm Gray #6B7280 */
+    --secondary-foreground: 210 40% 98%; /* Near White */
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 175 82% 31%; /* New: Darker Teal #0D9488 for contrast */
+    --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 217 91% 60%; /* New: Primary blue for focus ring */
 
-    --radius: 0.5rem;
+    --radius: 0.375rem; /* New: 6px */
 
+    /* Font Variables */
+    --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-heading: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    /* Existing Sidebar Variables - Unchanged per this request */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -61,24 +59,26 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 75%; /* New: Lighter Blue for dark mode */
+    --primary-foreground: 222.2 84% 4.9%; /* New: Dark text for contrast */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 10% 25%; /* New: Darker Warm Gray #374151 */
+    --secondary-foreground: 210 40% 98%; /* Near White */
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 170 65% 50%; /* New: Lighter Teal #2DD4BF for dark mode */
+    --accent-foreground: 0 0% 10%; /* Near Black text */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 217 91% 75%; /* New: Lighter blue for dark mode focus ring */
+
+    /* Existing Sidebar Variables (Dark) - Unchanged per this request */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -90,12 +90,18 @@
   }
 }
 
+/* Removed custom .font-body and .font-heading utilities from here as they will be handled by Tailwind config */
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans; /* Apply new sans font family via Tailwind */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading; /* Apply new heading font family via Tailwind */
   }
 }
