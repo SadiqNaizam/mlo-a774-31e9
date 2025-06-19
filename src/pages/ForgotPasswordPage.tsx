@@ -44,7 +44,7 @@ const ForgotPasswordPage: React.FC = () => {
     setIsLoading(false);
 
     // Optionally, redirect after a delay or keep user on page
-    // setTimeout(() => navigate('/'), 3000); // Redirect to login page
+    // setTimeout(() => navigate('/login'), 3000); // Changed: Redirect to login page at /login
   };
 
   return (
@@ -57,14 +57,14 @@ const ForgotPasswordPage: React.FC = () => {
           alternativeActions={
             <p className="text-center text-sm">
               Remember your password?{' '}
-              <Link to="/" className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
+              <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"> {/* Changed: Link to /login */}
                 Sign In
               </Link>
             </p>
           }
         >
           <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-6">
-            No worries! Enter your email address below and we'll send you a link to reset your password.
+            No worries! Enter your email address below and we&apos;ll send you a link to reset your password.
           </p>
 
           {message && (
@@ -75,8 +75,7 @@ const ForgotPasswordPage: React.FC = () => {
                 {message.text}
               </AlertDescription>
             </Alert>
-          )}
-
+          )}\n
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <Label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
