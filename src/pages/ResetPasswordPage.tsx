@@ -63,15 +63,15 @@ const ResetPasswordPage = () => {
         description: 'You can now log in with your new password.',
       });
       setSuccessMessage('Your password has been updated successfully. Redirecting to login...');
-      // Redirect to LoginPage (path '/') after a short delay
+      // Redirect to LoginPage (path '/login') after a short delay
       setTimeout(() => {
-        navigate('/'); // Navigate to LoginPage as per App.tsx
+        navigate('/login'); // Changed: Navigate to LoginPage at /login
       }, 2000);
     }, 2000);
   };
 
   const logoElement = (
-    <Link to="/" className="inline-flex items-center justify-center">
+    <Link to="/" className="inline-flex items-center justify-center"> {/* Link to / (Registration) is fine for logo */}
       <ShieldCheck className="h-10 w-10 text-blue-600 dark:text-blue-500" />
     </Link>
   );
@@ -79,7 +79,7 @@ const ResetPasswordPage = () => {
   const alternativeActions = (
     <div className="text-center text-sm">
       Remembered your password?{' '}
-      <Link to="/" className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
+      <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"> {/* Changed: Link to /login */}
         Log In
       </Link>
     </div>
