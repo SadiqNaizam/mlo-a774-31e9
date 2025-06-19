@@ -24,10 +24,11 @@ const App = () => (
         <Routes>
 
 
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<RegistrationPage />} /> {/* Changed: Registration is now at root */}
+          <Route path="/login" element={<LoginPage />} /> {/* Added: Login page moved here */}
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-          <Route path="/registration" element={<RegistrationPage />} />
+          {/* <Route path="/registration" element={<RegistrationPage />} /> Removed: / is now registration */}
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           {/* catch-all */}
           <Route path="*" element={<NotFound />} />
