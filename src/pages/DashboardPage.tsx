@@ -23,7 +23,7 @@ const DashboardPage = () => {
         <div className="flex items-center space-x-4">
           <UserCircle className="h-7 w-7" />
           <span className="hidden sm:inline">{userName}</span>
-          <Link to="/"> {/* Logout redirects to LoginPage which is at path '/' */}
+          <Link to="/login"> {/* Changed: Logout redirects to LoginPage at /login */}
             <Button variant="ghost" size="sm" className="text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground">
               <LogOut className="mr-0 sm:mr-2 h-5 w-5" />
               <span className="hidden sm:inline">Logout</span>
@@ -133,7 +133,7 @@ const DashboardPage = () => {
           <Link to="/settings" className="flex flex-col items-center text-xs text-muted-foreground hover:text-primary">
               <Settings className="h-5 w-5" /> Settings
           </Link>
-          <Link to="/" className="flex flex-col items-center text-xs text-muted-foreground hover:text-primary">
+          <Link to="/login" className="flex flex-col items-center text-xs text-muted-foreground hover:text-primary"> {/* Changed: Logout redirects to /login */}
               <LogOut className="h-5 w-5" /> Logout
           </Link>
       </footer>
