@@ -47,7 +47,7 @@ const RegistrationPage: React.FC = () => {
       setSuccessMessage("Registration successful! Redirecting to login...");
       // In a real app, you might automatically log the user in or store a token
       setTimeout(() => {
-        navigate('/'); // Navigate to LoginPage, path from App.tsx
+        navigate('/login'); // Changed: Navigate to LoginPage at /login
       }, 2000);
     } else {
       setError("Registration failed. Please try again later or use a different email.");
@@ -59,7 +59,7 @@ const RegistrationPage: React.FC = () => {
   const alternativeActions = (
     <p className="text-center text-sm">
       Already have an account?{' '}
-      <Link to="/" className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">
+      <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"> {/* Changed: Link to /login */}
         Log in
       </Link>
     </p>
