@@ -75,7 +75,7 @@ const LoginPage: React.FC = () => {
     <>
       <div className="text-center">
         <Link
-          to="/forgot-password" // Path from App.tsx
+          to="/forgot-password" // Path from App.tsx, remains unchanged
           className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-500 hover:underline"
         >
           Forgot Password?
@@ -84,7 +84,7 @@ const LoginPage: React.FC = () => {
       <div className="mt-4 text-center text-sm">
         Don&apos;t have an account?{' '}
         <Link
-          to="/registration" // Path from App.tsx
+          to="/" // Changed: Path to RegistrationPage is now root '/'
           className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-500 hover:underline"
         >
           Sign Up
